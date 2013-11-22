@@ -2,4 +2,8 @@ task :test do
   system 'cutest test/**/*.rb'
 end
 
+task :solve do
+  system 'SOLUTION=1 cutest test/**/*.rb'
+end
+
 task default: :test
