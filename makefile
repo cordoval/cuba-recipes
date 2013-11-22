@@ -1,7 +1,7 @@
 .PHONY: test
 
 test:
-	cutest test/**/*.rb
+	ruby test/cuba_recipes.rb
 
 solve:
-	SOLUTION=1 cutest test/**/*.rb
+	SOLUTION=1 ruby test/cuba_recipes.rb
