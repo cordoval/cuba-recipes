@@ -1,18 +1,11 @@
 require 'cuba/test'
 
+def require_recipe name
+  dir = ENV['SOLUTION'] ? 'solutions' : 'recipes'
+  require_relative "../#{dir}/#{name}/app"
+end
+
 class Cutest::Scope
-  def assert_response type
-    if Symbol === type
-      assert_equal status_code(type), last_response.status
-    else
-      assert_equal type, last_response.status
-    end
-  end
-
-  def assert_body body
-    assert_equal body, last_response.body
-  end
-
   def status_code code
     Rack::Utils.status_code code
   end
